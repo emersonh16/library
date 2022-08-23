@@ -1,4 +1,18 @@
-let myLibrary = [{title:"Jurassic Park", author:"Michael Criton", pages: 458, read: true}, {title:"Harry Potter",author:"JKR", pages:315, read: true}];
+let myLibrary = [
+    {
+    title:"Jurassic Park",
+    author:"Michael Criton",
+    pages: 458,
+    read: true
+    }
+    , 
+    {
+    title:"Harry Potter",
+    author:"JKR",
+    pages:315,
+    read: true
+    }
+    ];
 
 
 function bookConstructor(title,author,pages,read) {
@@ -28,22 +42,45 @@ function addBookToLibrary(bookConstructor) {
     }
 
 
+
+
+// When the user clicks on <div>, open the popup
+function displayPopup() {
+    var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+
+    var x = document.getElementById("toggleButton")
+    
+        if (x.innerHTML === "Click here to add a book!"){
+                x.innerHTML = "Click here to hide popup!"
+        }
+        else {
+                x.innerHTML = "Click here to add a book!"
+        }
+  }
+
+
+//displays myLibrary contents in the libraryDiv
 function displayLibrary () {
 
-    let contents = document.getElementById("bookList").innerHTML
+    let contents = document.getElementById("libraryDiv")
 
     for (let i=0; i < myLibrary.length; i++) {
-        contents += myLibrary[i]
+        console.log(myLibrary[i])
+        
+        const bookContainer = document.createElement("div");
+
+            bookContainer.innerHTML = JSON.stringify(myLibrary[i])
+
+            bookContainer.classList.add('bookContainer');
+
+            contents.appendChild(bookContainer);
+
     }
 
     return contents
 }
 
 
-// When the user clicks on <div>, open the popup
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
 
-document.addEventListener("load", displayLibrary);
+window.addEventListener("load", displayLibrary);
