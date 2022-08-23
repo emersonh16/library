@@ -3,16 +3,19 @@ let myLibrary = [
     title:"Jurassic Park",
     author:"Michael Criton",
     pages: 458,
-    read: true
+    read: true,
     }
     , 
     {
     title:"Harry Potter",
     author:"JKR",
     pages:315,
-    read: true
+    read: true,
     }
     ];
+
+let jurassicPark = myLibrary[0]
+let harryPotter = myLibrary[1]
 
 
 function bookConstructor(title,author,pages,read) {
@@ -39,7 +42,10 @@ function addBookToLibrary(bookConstructor) {
     var newBook = bookConstructor;
 
     myLibrary.push(newBook)
+
+    console.log(myLibrary)
     }
+
 
 
 
@@ -79,6 +85,10 @@ function displayLibrary () {
     }
 
     return contents
+}
+
+function testFunction(){
+    console.log("i clicked submit")
 }
 
 
