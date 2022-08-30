@@ -17,7 +17,7 @@
     <div class="popup">
         <span class="popuptext" id="myPopup">
 
-            <form action="" onsubmit="return testFunction(this.form)">
+            <form id="bookForm" action="" onsubmit="return testFunction(this.form)" method="post">
                 <label for="bookTitle">Book Title</label>
                 <input type="text" id="bookTitle" name="bookTitle">
 
@@ -33,7 +33,7 @@
                 <input type="radio" id="notRead" name="readquery" value="notRead">
                 <label for="notRead">Not Read</label><br>
                 
-                <input type="submit" value="Submit">
+                <input type="submit" id="submitButton" onclick="submitBook()" value="Submit">
 
             </form>
 

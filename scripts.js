@@ -87,10 +87,42 @@ function displayLibrary () {
     return contents
 }
 
-function testFunction(){
-    console.log("i clicked submit")
+
+
+
+function submitBook() {
+    document.getElementById("bookForm").submit();
+    console.log(document.getElementById("bookForm").elements['bookTitle'].value)
+  }
+
+
+
+
+const userInputBook = document.querySelector("#bookTitle")
+
+const submitButton = document.querySelector("#submitButton")
+
+
+submitButton.addEventListener('click', () => {
+    document.getElementById("libraryDiv").innerText = "${userInputBook.value}";
+})
+
+
+
+
+
+
+
+//window.addEventListener("load", displayLibrary);
+
+
+
+const form  = document.getElementById('bookForm');
+
+function returnTitle() {
+var title = form.elements['bookTitle']
+var userInputTitle = title.value
+console.log(userInputTitle)
 }
 
-
-
-window.addEventListener("load", displayLibrary);
+document.getElementById("bookForm").addEventListener('submit', returnTitle);
