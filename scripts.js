@@ -1,4 +1,34 @@
-let myLibrary = [{title:"Jurassic Park", author:"Michael Criton", pages: 458, read: true}, {title:"Harry Potter",author:"JKR", pages:315, read: true}];
+var mainForm = document.getElementById("bookForm")
+
+mainForm.addEventListener("submit", onSubmit)
+
+
+function onSubmit(x) {
+    x.preventDefault()
+    var zzz = new Book("harrypotter")
+    books.push(zzz)
+    console.log(zzz.upperCaseName())
+}
+
+class Book{
+    constructor(name){
+        this.name = name
+    }
+
+    upperCaseName(){
+        return this.name.toUpperCase()
+    }
+
+    name
+} 
+
+let books = []
+
+
+
+
+
+/*let myLibrary = [{title:"Jurassic Park", author:"Michael Criton", pages: 458, read: true}, {title:"Harry Potter",author:"JKR", pages:315, read: true}];
 
 
 function bookConstructor(title,author,pages,read) {
@@ -14,7 +44,7 @@ function bookConstructor(title,author,pages,read) {
                 readStatus = "already read."
                 }
             else {
-                readStatus = "not read yet."
+                readStatus = "not read yet."ccc
             }
 
          return title + " by " + author + ", " + pages + " pages, " + readStatus
@@ -28,7 +58,7 @@ function addBookToLibrary(bookConstructor) {
     }
 
 
-function displayLibrary () {
+function displayLibrary() {
 
     let contents = document.getElementById("bookList").innerHTML
 
