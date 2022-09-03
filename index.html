@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
+   
 </head>
 <body>
+   
     <form id="bookForm">
-        <input type="text" name="bookTitle"/>
+        <label for="bookTitle">Book Title</label>
+        <input type="text" id="bookTitle" name="bookTitle"/>
+       
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author">
+       
+        <label for="pages">How many Pages?</label>
+        <input type="number" id="pages" name="pages"><br>
+               
+        <input type="radio" id="haveRead" name="readQuery" value="haveRead">
+        <label for="haveRead">Read</label><br>
+               
+        <input type="radio" id="notRead" name="readQuery" value="notRead">
+        <label for="notRead">Not Read</label><br>
+ 
         <input type="submit">
-
+ 
     </form>
+
+    <button type="button" id="ascName">Ascending Alphabetical by Name</button>
+    <button type="button" id="dscName">Descending Alphebetical by Name</button>
+    <button type="button" id="bookLength">Length</button>
+ 
+    <div class="libraryDiv" id="libraryDiv"> JURRASIC PARK, by Michael Criton, 459 pages long. Harry Potter, by JKR, 48 pages long. Game of Thrones, by JRRM, 1000 pages long.
+    </div>
+     
+ 
     <script src="scripts.js"></script>
 </body>
 </html>
-
-
 
 <!-- <!DOCTYPE html>
 <html lang="en">
