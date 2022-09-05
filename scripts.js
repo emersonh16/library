@@ -2,6 +2,7 @@ var mainForm = document.getElementById("bookForm")
 var ascNameButton= document.getElementById("ascName")
 var dscNameButton= document.getElementById("dscName")
 var bookLength= document.getElementById("bookLength")
+var userFilter = document.getElementById("userFilter")
  
  
 mainForm.addEventListener("submit", onSubmit)
@@ -87,16 +88,48 @@ function descendingAlphabeticalTitle (){
         }
         books.sort( compare );
         bookDisplayText()
-    }
+ }
 
-    function bookLengthFunction (){
+function bookLengthFunction (){
         function compare( a, b ) {
           return b.pages - a.pages
         }
         books.sort( compare );
         bookDisplayText()
-    }
+ }
  
+function filterFunction() {
+
+
+    //set libarry div inner text to nothing then fill it with 
+    document.getElementById("libraryDiv").innerHTML = ""
+
+
+    let userInput = userFilter.value.toString()
+
+
+for (let i=0; i<books.length; i++) {
+
+    let arr = Object.keys(books[i]).reduce(function(res,v) {
+        return res.concat(books[i][v]);
+
+    }, []);
+
+    let checkThis = arr.toString()
+
+    if (checkThis.includes(userInput)==true) {
+        console.log(arr)
+
+        document.getElementById("libraryDiv").innerHTML += "<div>" + books[i].name + ", by " + books[i].author + ", " +books[i].pages + " pages long. " + "</div>"
+    }
+
+
+    //console.log(arr)
+   //console.log(searchTest)
+}
+}
+
+
  
 class Book{
     constructor(name, author, pages){
@@ -122,7 +155,6 @@ let books = [
     gameOfThrones,
 
 ]
- 
  
  
  
